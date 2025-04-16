@@ -365,3 +365,36 @@
         padding: 1rem;
     }
 }
+
+ 
+.course-catalog-page .courses-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .course-catalog-page  .course-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  .course-catalog-page .course-card.left-content {
+    flex-direction: row;
+  }
+  
+  .course-catalog-page .course-card.right-content {
+    flex-direction: row-reverse;
+  }
+  
+  .course-catalog-page .course-details {
+    flex: 1;
+  }
+  
+  .course-catalog-page .course-image img {
+    width: 300px;
+    height: auto;
+    border-radius: 12px;
+  }
+  
