@@ -1,8 +1,33 @@
-// src/pages/HomePage.jsx
 import { Link } from 'react-router-dom';
 import SuccessStories from '../components/SuccessStories';
 
+// Import images correctly
+import fullstackImg from '../assets/fullstack.webp';
+import cloudImg from '../assets/cloudcomputing.jpeg';
+import devopsImg from '../assets/devops.webp';
+
 export default function HomePage() {
+  const courses = [
+    {
+      title: 'Full Stack Development',
+      description: 'Learn front-end and back-end tools like React, Node.js, and MongoDB.',
+      link: '/courses/fullstack',
+      img: fullstackImg,
+    },
+    {
+      title: 'Cloud Computing',
+      description: 'Master AWS, Azure, and cloud architecture.',
+      link: '/courses/cloud',
+      img: cloudImg,
+    },
+    {
+      title: 'DevOps',
+      description: 'Gain CI/CD, Docker, Jenkins, and Kubernetes skills.',
+      link: '/courses/devops',
+      img: devopsImg,
+    },
+  ];
+
   return (
     <div className="home-container">
       {/* Navigation Bar */}
@@ -29,19 +54,16 @@ export default function HomePage() {
       <section className="courses-section">
         <h2>Popular Courses</h2>
         <div className="courses-grid">
-          {[{ title: 'Full Stack Development', description: 'Learn front-end and back-end tools like React, Node.js, and MongoDB.', link: '/courses/fullstack', img: 'https://via.placeholder.com/300' },
-            { title: 'Cloud Computing', description: 'Master AWS, Azure, and cloud architecture.', link: '/courses/cloud', img: 'https://via.placeholder.com/300' },
-            { title: 'DevOps', description: 'Gain CI/CD, Docker, Jenkins, and Kubernetes skills.', link: '/courses/devops', img: 'https://via.placeholder.com/300' }]
-            .map(course => (
-              <div className="course-card" key={course.title}>
-                <img src={course.img} alt={course.title} />
-                <h3>{course.title}</h3>
-                <p>{course.description}</p>
-                <Link to={course.link}>
-                  <button className="course-btn">Learn More</button>
-                </Link>
-              </div>
-            ))}
+          {courses.map(course => (
+            <div className="course-card" key={course.title}>
+              <img src={course.img} alt={course.title} />
+              <h3>{course.title}</h3>
+              <p>{course.description}</p>
+              <Link to={course.link}>
+                <button className="course-btn">Learn More</button>
+              </Link>
+            </div>
+          ))}
         </div>
       </section>
 
